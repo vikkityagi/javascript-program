@@ -1,0 +1,25 @@
+## write a program to get the character from a string and check that character would not repeated more than two times and 
+   character sequence must be same as  the string character sequence and check whether it is plaindrome or not.
+
+var str = 'abcccdddiiia'
+var str1=''
+msg='is palindrome'
+for (var i = 0;i<str.length;i++){
+    var count = 0
+    for (var j = 0;j<str.length;j++){
+        if(str[i]==str[j]){
+            count++;
+        }
+    }
+    if(count<3){
+        str1+=str[i]
+    }
+}
+
+for(var k = 0;k<str1.length;k++){
+    if(str1[k]!=str1[str1.length-k-1]){
+        msg='Not palindrome'
+    }
+}
+
+document.write(`${str1} ${msg}`)
