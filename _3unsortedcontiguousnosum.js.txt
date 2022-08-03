@@ -1,0 +1,26 @@
+var arr= new Array(77,46)
+var comp = new Array();
+var j=0;
+for (var i = 0;i<=Math.floor(arr.length)/2;i++){
+    var sum = 0;
+    for(var j=0;j<arr.slice(i,i+3).length;j++){
+        sum+=arr.slice(i,i+3)[j]
+    }
+    comp.push(sum)
+}
+for(var k = 0;k<comp.length-1;k++){
+    var l = k+1
+    while(l<comp.length){
+        if(comp[l]<comp[k]){
+            comp[k]=comp[k]+comp[l];
+            comp[l]=comp[k]-comp[l];
+            comp[k]=comp[k]-comp[l];  
+        }
+        
+        l++;
+    }
+}
+console.log(comp)
+document.write(comp[comp.length-1])
+
+
